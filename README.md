@@ -2,9 +2,9 @@
 
 🌌 EMQ X UI Library.
 
-## 🔧 Usage
+## Usage
 
-Install
+Install package
 
 ```shell
 yarn add @emqx/emqx-ui
@@ -21,7 +21,7 @@ const app = createApp(App)
 app.use(EmqxUI)
 ```
 
-## 🚗 Project setup
+## Project setup
 
 ```shell
 # Install dependencies
@@ -34,6 +34,14 @@ yarn serve
 yarn lint
 ```
 
-## 🙏 Thanks
+```shell
+# Build to lib
+yarn lib
+
+# Publish package
+npm publish
+```
+
+## Thanks
 
 Powered by [Vue.js 3.0](https://v3.vuejs.org/) and [element-plus](https://element-plus.org/#/en-US)
