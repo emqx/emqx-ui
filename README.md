@@ -21,6 +21,22 @@ const app = createApp(App)
 app.use(EmqxUI)
 ```
 
+```html
+<template>
+  <emqx-button>Test</emqx-button>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'App',
+})
+</script>
+
+<style lang="scss"></style>
+```
+
 ## Project setup
 
 ```shell
