@@ -1,4 +1,4 @@
-# emqx-element-ui
+# emqx-ui
 
 ## Project setup
 ```

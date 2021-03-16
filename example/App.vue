@@ -1,5 +1,5 @@
 <template>
-  <emqx-button>123</emqx-button>
+  <emqx-button>zxc</emqx-button>
 </template>
 
 <script lang="ts">
