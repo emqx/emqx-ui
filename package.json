@@ -14,6 +14,11 @@
     "MQTT"
   ],
   "author": "EMQ X Frontend Team",
+  "homepage": "https://emqx.io/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emqx/emqx-ui"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
