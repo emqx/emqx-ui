@@ -1,17 +1,15 @@
 <template>
-  <el-col class="emqx-col">
-    <slot></slot>
-  </el-col>
+  <el-switch class="emqx-switch"></el-switch>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElCol } from 'element-plus'
+import { ElSwitch } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxCol',
+  name: 'EmqxSwitch',
   components: {
-    ElCol,
+    ElSwitch,
   },
 })
 </script>

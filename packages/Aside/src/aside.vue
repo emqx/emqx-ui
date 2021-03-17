@@ -1,17 +1,17 @@
 <template>
-  <el-col class="emqx-col">
+  <el-aside class="emqx-aside">
     <slot></slot>
-  </el-col>
+  </el-aside>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElCol } from 'element-plus'
+import { ElAside } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxCol',
+  name: 'EmqxAside',
   components: {
-    ElCol,
+    ElAside,
   },
 })
 </script>
