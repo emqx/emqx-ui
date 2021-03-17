@@ -4,7 +4,7 @@
 
 ## Usage
 
-Install package
+### Install package
 
 ```shell
 yarn add @emqx/emqx-ui
@@ -20,6 +20,8 @@ import '@emqx/emqx-ui/lib/emqx-ui.css'
 const app = createApp(App)
 app.use(EmqxUI)
 ```
+
+component.vue
 
 ```html
 <template>
@@ -37,7 +39,31 @@ export default defineComponent({
 <style lang="scss"></style>
 ```
 
+### Set custom theme
+
+Create a new theme file.
+
+emqx-ui-variables.scss
+
+```scss
+/* theme color */
+$--color-primary: $custom-color;
+
+/* icon font path, required */
+$--font-path: '~element-plus/lib/theme-chalk/fonts';
+
+@import "~element-plus/packages/theme-chalk/src/index";
+```
+
+main.js
+
+```js
+import './emqx-ui-variables.scss'
+```
+
 ## Project setup
+
+### Run server demo
 
 ```shell
 # Install dependencies
@@ -49,6 +75,8 @@ yarn serve
 # Lints and fixes files
 yarn lint
 ```
+
+### Build npm package lib
 
 ```shell
 # Build to lib

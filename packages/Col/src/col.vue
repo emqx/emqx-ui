@@ -1,17 +1,17 @@
 <template>
-  <el-button class="emqx-button">
+  <el-col class="emqx-col">
     <slot></slot>
-  </el-button>
+  </el-col>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElButton } from 'element-plus'
+import { ElCol } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxButton',
+  name: 'EmqxCol',
   components: {
-    ElButton,
+    ElCol,
   },
 })
 </script>
