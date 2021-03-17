@@ -71,9 +71,6 @@ yarn install
 
 # Compiles and hot-reloads for development
 yarn serve
-
-# Lints and fixes files
-yarn lint
 ```
 
 ### Build npm package lib
