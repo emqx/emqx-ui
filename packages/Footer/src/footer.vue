@@ -1,17 +1,17 @@
 <template>
-  <el-col class="emqx-col">
+  <el-footer class="emqx-footer">
     <slot></slot>
-  </el-col>
+  </el-footer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElCol } from 'element-plus'
+import { ElFooter } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxCol',
+  name: 'EmqxFooter',
   components: {
-    ElCol,
+    ElFooter,
   },
 })
 </script>

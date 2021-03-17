@@ -1,23 +1,24 @@
 <template>
-  <el-input class="emqx-input"></el-input>
+  <el-select class="emqx-select">
+    <slot></slot>
+  </el-select>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElInput } from 'element-plus'
+import { ElSelect } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxInput',
+  name: 'EmqxSelect',
   components: {
-    ElInput,
+    ElSelect,
   },
 })
 </script>
 
 <style lang="scss">
-.emqx-input {
-  .el-input__inner,
-  .el-textarea__inner {
+.emqx-select {
+  .el-input__inner {
     border-radius: 0px;
   }
 }

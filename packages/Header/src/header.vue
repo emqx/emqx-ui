@@ -1,17 +1,17 @@
 <template>
-  <el-col class="emqx-col">
+  <el-header class="emqx-header">
     <slot></slot>
-  </el-col>
+  </el-header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ElCol } from 'element-plus'
+import { ElHeader } from 'element-plus'
 
 export default defineComponent({
-  name: 'EmqxCol',
+  name: 'EmqxHeader',
   components: {
-    ElCol,
+    ElHeader,
   },
 })
 </script>
