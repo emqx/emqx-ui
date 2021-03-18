@@ -3,6 +3,7 @@
   <div class="show-item">
     <emqx-button type="primary" @click="test">test</emqx-button>
     <emqx-button type="warning">test</emqx-button>
+    <emqx-button type="success">test</emqx-button>
     <emqx-button type="danger">test</emqx-button>
   </div>
   <div class="show-item">
@@ -41,7 +42,7 @@
   </div>
   <h2>Switch</h2>
   <div class="show-item">
-    <emqx-switch v-model="testSwitch" active-color="#13ce66" inactive-color="#ff4949"></emqx-switch>
+    <emqx-switch v-model="testSwitch"></emqx-switch>
   </div>
   <h2>Form</h2>
   <div class="show-item">
@@ -68,6 +69,24 @@
       <emqx-table-column prop="name" label="姓名" width="180"> </emqx-table-column>
       <emqx-table-column prop="address" label="地址"> </emqx-table-column>
     </emqx-table>
+  </div>
+  <h2>Pagination</h2>
+  <div class="show-item">
+    <emqx-pagination layout="prev, pager, next" :total="50"> </emqx-pagination>
+  </div>
+  <h2>Card</h2>
+  <div class="show-item">
+    <emqx-card>
+      <template #header>
+        <div class="card-header">
+          <span>卡片名称</span>
+          <emqx-button class="button" type="text">操作按钮</emqx-button>
+        </div>
+      </template>
+      <div v-for="o in 4" :key="o" class="text item">
+        {{ '列表内容 ' + o }}
+      </div>
+    </emqx-card>
   </div>
 </template>
 

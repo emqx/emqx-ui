@@ -16,6 +16,8 @@ import FormItem from './FormItem'
 import Table from './Table'
 import TableColumn from './TableColumn'
 import Message from './Message'
+import Card from './Card'
+import Pagination from './Pagination'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -39,6 +41,8 @@ const components = [
   Table,
   TableColumn,
   Message,
+  Card,
+  Pagination,
 ]
 
 const install = (Vue: App) => {
@@ -70,6 +74,8 @@ const packages = {
   Table,
   TableColumn,
   Message,
+  Card,
+  Pagination,
 }
 
 export default packages
