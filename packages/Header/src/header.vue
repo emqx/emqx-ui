@@ -1,6 +1,13 @@
 <template>
   <el-header class="emqx-header">
-    <slot></slot>
+    <div class="emqx-header-container">
+      <div class="left">
+        <slot name="title"></slot>
+      </div>
+      <div class="right-handlers">
+        <slot name="right"></slot>
+      </div>
+    </div>
   </el-header>
 </template>
 
@@ -16,4 +23,18 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.emqx-header {
+  width: 100%;
+  height: 60px;
+
+  .emqx-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+</style>
