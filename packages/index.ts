@@ -18,6 +18,10 @@ import TableColumn from './TableColumn'
 import Message from './Message'
 import Card from './Card'
 import Pagination from './Pagination'
+import Menu from './Menu'
+import Submenu from './Submenu'
+import MenuItemGroup from './MenuItemGroup'
+import MenuItem from './MenuItem'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -43,6 +47,10 @@ const components = [
   Message,
   Card,
   Pagination,
+  Menu,
+  Submenu,
+  MenuItemGroup,
+  MenuItem,
 ]
 
 const install = (Vue: App) => {
@@ -76,6 +84,10 @@ const packages = {
   Message,
   Card,
   Pagination,
+  Menu,
+  Submenu,
+  MenuItemGroup,
+  MenuItem,
 }
 
 export default packages
