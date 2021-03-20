@@ -16,4 +16,20 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.el-table.emqx-table {
+  thead {
+    color: #96999c;
+    font-weight: 500;
+  }
+  th {
+    background: #f3f4f7;
+    &.is-leaf {
+      border: none;
+    }
+  }
+  .el-table td {
+    border-bottom: 1px solid #eff1f7;
+  }
+}
+</style>
