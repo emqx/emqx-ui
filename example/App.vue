@@ -34,6 +34,23 @@
       </emqx-container>
     </emqx-container>
   </div>
+  <h2>normal container</h2>
+  <emqx-header>
+    <template v-slot:title>logo</template>
+    <template v-slot:right>handlers</template>
+  </emqx-header>
+  <emqx-container normal>
+    <template v-slot:nav>
+      <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+      </ul>
+    </template>
+    <template v-slot:page-content>
+      <p>page content</p>
+    </template>
+  </emqx-container>
   <h2>Select</h2>
   <div class="show-item">
     <emqx-select v-model="testSelect" clearable>
