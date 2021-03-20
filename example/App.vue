@@ -105,6 +105,27 @@
       </div>
     </emqx-card>
   </div>
+  <h2>Menu</h2>
+  <div class="show-item">
+    <emqx-row>
+      <emqx-col :span="12">
+        <emqx-menu default-active="2" class="el-menu-vertical-demo">
+          <emqx-menu-item index="1">
+            <i class="el-icon-menu"></i>
+            <template #title>导航二</template>
+          </emqx-menu-item>
+          <emqx-menu-item index="2">
+            <i class="el-icon-document"></i>
+            <template #title>导航三</template>
+          </emqx-menu-item>
+          <emqx-menu-item index="3">
+            <i class="el-icon-setting"></i>
+            <template #title>导航四</template>
+          </emqx-menu-item>
+        </emqx-menu>
+      </emqx-col>
+    </emqx-row>
+  </div>
 </template>
 
 <script lang="ts">
