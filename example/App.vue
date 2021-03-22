@@ -126,6 +126,15 @@
       </emqx-col>
     </emqx-row>
   </div>
+  <h2>Breadcrumb</h2>
+  <div class="show-item">
+    <emqx-breadcrumb separator="/">
+      <emqx-breadcrumb-item :to="{ path: '/' }">首页</emqx-breadcrumb-item>
+      <emqx-breadcrumb-item><a href="/">活动管理</a></emqx-breadcrumb-item>
+      <emqx-breadcrumb-item>活动列表</emqx-breadcrumb-item>
+      <emqx-breadcrumb-item>活动详情</emqx-breadcrumb-item>
+    </emqx-breadcrumb>
+  </div>
 </template>
 
 <script lang="ts">
@@ -189,6 +198,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+#app {
+  padding: 120px;
+}
 .show-item {
   margin-bottom: 20px;
 }

@@ -1,10 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import UI from '../packages/index'
+import EmqxUI from '../packages'
 import './emqx-ui-variables.scss'
+import lang from 'element-plus/lib/locale/lang/zh-cn'
+import 'dayjs/locale/zh-cn'
+import locale from 'element-plus/lib/locale'
 
-console.log(UI)
+locale.use(lang)
+
+console.log(EmqxUI)
 
 createApp(App)
-  .use(UI)
+  .use(EmqxUI)
   .mount('#app')
