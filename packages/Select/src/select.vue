@@ -19,7 +19,7 @@ export default defineComponent({
 <style lang="scss">
 .emqx-select {
   .el-input__inner {
-    border-radius: 0px;
+    border-radius: 8px;
   }
 }
 </style>

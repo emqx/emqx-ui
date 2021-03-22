@@ -23,6 +23,7 @@ export default defineComponent({
 .emqx-menu-item.el-menu-item.is-active {
   color: #fff;
   background: #4c63ee;
+  border-radius: 8px;
   box-shadow: 5px 6px 12px 0 #4c63ee52;
 }
 </style>
