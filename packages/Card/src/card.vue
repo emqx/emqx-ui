@@ -23,6 +23,9 @@ export default defineComponent({
 .emqx-card {
   .el-card {
     border-radius: 8px;
+    .el-card__body {
+      padding: 32px;
+    }
   }
 }
 </style>

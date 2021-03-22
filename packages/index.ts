@@ -22,6 +22,8 @@ import Menu from './Menu'
 import Submenu from './Submenu'
 import MenuItemGroup from './MenuItemGroup'
 import MenuItem from './MenuItem'
+import Breadcrumb from './Breadcrumb'
+import BreadcrumbItem from './BreadcrumbItem'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -51,6 +53,8 @@ const components = [
   Submenu,
   MenuItemGroup,
   MenuItem,
+  Breadcrumb,
+  BreadcrumbItem,
 ]
 
 const install = (Vue: App) => {
@@ -88,6 +92,8 @@ const packages = {
   Submenu,
   MenuItemGroup,
   MenuItem,
+  Breadcrumb,
+  BreadcrumbItem,
 }
 
 export default packages
