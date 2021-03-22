@@ -1,5 +1,7 @@
 <template>
-  <el-table-column class="emqx-table-column"></el-table-column>
+  <el-table-column class="emqx-table-column">
+    <slot></slot>
+  </el-table-column>
 </template>
 
 <script lang="ts">
