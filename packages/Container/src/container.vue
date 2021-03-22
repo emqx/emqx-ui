@@ -2,7 +2,9 @@
   <el-container class="emqx-container" :class="normal ? 'is-normal' : ''">
     <template v-if="normal">
       <emqx-aside :width="`${navWidth}px`">
-        <slot name="nav"></slot>
+        <div class="nav-container" ref="navContainer" :width="`${navWidth}px`">
+          <slot name="nav"></slot>
+        </div>
       </emqx-aside>
       <emqx-main>
         <slot name="page-content"></slot>
@@ -13,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import { ElContainer } from 'element-plus'
 
 export default defineComponent({
@@ -35,6 +37,23 @@ export default defineComponent({
       default: 220,
     },
   },
+  setup() {
+    const navContainer = ref<HTMLElement>()
+
+    onMounted(() => {
+      try {
+        const ele: HTMLElement | undefined = navContainer?.value
+        const pos = ele?.getBoundingClientRect()
+        ele?.style?.setProperty('position', 'fixed')
+        ele?.style?.setProperty('top', pos?.top ? `${pos?.top}px` : '0px')
+      } catch (error) {
+        console.error(error)
+      }
+    })
+    return {
+      navContainer,
+    }
+  },
 })
 </script>
 
@@ -44,6 +63,9 @@ export default defineComponent({
   &.is-normal {
     margin-right: auto;
     margin-left: auto;
+  }
+  .nav-container {
+    position: static;
   }
 }
 </style>
