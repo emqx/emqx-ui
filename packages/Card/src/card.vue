@@ -22,7 +22,7 @@ export default defineComponent({
 <style lang="scss">
 .emqx-card {
   .el-card {
-    border-radius: 0px;
+    border-radius: 8px;
   }
 }
 </style>

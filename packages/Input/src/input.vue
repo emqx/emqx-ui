@@ -18,7 +18,7 @@ export default defineComponent({
 .emqx-input {
   .el-input__inner,
   .el-textarea__inner {
-    border-radius: 0px;
+    border-radius: 8px;
   }
 }
 </style>
