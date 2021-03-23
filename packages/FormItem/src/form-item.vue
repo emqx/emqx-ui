@@ -1,5 +1,8 @@
 <template>
   <el-form-item class="emqx-form-item">
+    <template v-if="$slots.label" #label>
+      <slot name="label"></slot>
+    </template>
     <slot></slot>
   </el-form-item>
 </template>
