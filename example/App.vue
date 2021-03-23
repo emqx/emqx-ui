@@ -82,7 +82,12 @@
   <h2>Table</h2>
   <div class="show-item">
     <emqx-table :data="testTable" style="width: 100%">
-      <emqx-table-column prop="date" label="日期" width="180"> </emqx-table-column>
+      <emqx-table-column prop="date" label="日期" width="180">
+        <template #default="scope">
+          <i class="el-icon-time"></i>
+          <span style="margin-left: 10px">{{ scope.row.date }}</span>
+        </template>
+      </emqx-table-column>
       <emqx-table-column prop="name" label="姓名" width="180"> </emqx-table-column>
       <emqx-table-column prop="address" label="地址"> </emqx-table-column>
     </emqx-table>
