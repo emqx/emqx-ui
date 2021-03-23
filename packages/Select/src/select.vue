@@ -17,7 +17,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.emqx-select {
+.emqx-select.el-select {
+  width: 100%;
   .el-input__inner {
     border-radius: 8px;
   }
