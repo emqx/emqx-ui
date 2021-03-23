@@ -93,7 +93,7 @@
   </div>
   <h2>Card</h2>
   <div class="show-item">
-    <emqx-card>
+    <emqx-card border="none">
       <template #header>
         <div class="card-header">
           <span>卡片名称</span>
