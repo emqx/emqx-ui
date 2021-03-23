@@ -2,10 +2,10 @@
   <el-container class="emqx-container" :class="normal ? 'is-normal' : ''">
     <template v-if="normal">
       <emqx-aside :width="`${navWidth}px`">
-        <div class="nav-container" v-if="fixedNav" ref="navContainer" :width="`${navWidth}px`">
+        <div v-if="fixedNav" class="nav-container" ref="navContainer" :width="`${navWidth}px`">
           <slot name="nav"></slot>
         </div>
-        <slot name="nav" v-else></slot>
+        <slot v-else name="nav"></slot>
       </emqx-aside>
       <emqx-main>
         <slot name="page-content"></slot>
@@ -46,7 +46,7 @@ export default defineComponent({
     const navContainer = ref<HTMLElement>()
 
     onMounted(() => {
-      if (!props.normal || !props.normal) {
+      if (!props.normal || !props.fixedNav) {
         return
       }
       const ele: HTMLElement | undefined = navContainer?.value
