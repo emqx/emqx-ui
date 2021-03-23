@@ -50,9 +50,9 @@ export default defineComponent({
         return
       }
       const ele: HTMLElement | undefined = navContainer?.value
-      const pos = ele?.getBoundingClientRect()
+      const posY = ele?.offsetTop
       ele?.style?.setProperty('position', 'fixed')
-      ele?.style?.setProperty('top', pos?.top ? `${pos?.top}px` : '0px')
+      ele?.style?.setProperty('top', posY ? `${posY}px` : '0px')
     })
     return {
       navContainer,
