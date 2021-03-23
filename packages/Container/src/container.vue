@@ -46,17 +46,13 @@ export default defineComponent({
     const navContainer = ref<HTMLElement>()
 
     onMounted(() => {
-      try {
-        if (!props.normal || !props.normal) {
-          return
-        }
-        const ele: HTMLElement | undefined = navContainer?.value
-        const pos = ele?.getBoundingClientRect()
-        ele?.style?.setProperty('position', 'fixed')
-        ele?.style?.setProperty('top', pos?.top ? `${pos?.top}px` : '0px')
-      } catch (error) {
-        console.error(error)
+      if (!props.normal || !props.normal) {
+        return
       }
+      const ele: HTMLElement | undefined = navContainer?.value
+      const pos = ele?.getBoundingClientRect()
+      ele?.style?.setProperty('position', 'fixed')
+      ele?.style?.setProperty('top', pos?.top ? `${pos?.top}px` : '0px')
     })
     return {
       navContainer,
