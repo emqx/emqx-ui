@@ -23,8 +23,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name emqx-ui --dest lib packages/index.ts",
-    "publish-lib": "yarn lib && npm publish --access=public"
+    "lib": "vue-cli-service build --target lib --name emqx-ui --dest lib packages/index.ts"
   },
   "dependencies": {
     "core-js": "^3.6.5",
