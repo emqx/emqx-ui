@@ -22,11 +22,6 @@ export default defineComponent({
   components: {
     ElFormItem,
   },
-  props: {
-    hasOperation: {
-      type: Boolean,
-    },
-  },
 })
 </script>
 
