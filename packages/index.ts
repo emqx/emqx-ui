@@ -26,6 +26,7 @@ import Breadcrumb from './Breadcrumb'
 import BreadcrumbItem from './BreadcrumbItem'
 import Upload from './Upload'
 import TagsCheckbox from './TagsCheckbox'
+import KeyValueEditor from './KeyValueEditor'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -59,6 +60,7 @@ const components = [
   BreadcrumbItem,
   Upload,
   TagsCheckbox,
+  KeyValueEditor,
 ]
 
 const install = (Vue: App) => {
@@ -100,6 +102,7 @@ const packages = {
   BreadcrumbItem,
   Upload,
   TagsCheckbox,
+  KeyValueEditor,
 }
 
 export default packages
