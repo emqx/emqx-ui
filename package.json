@@ -1,6 +1,6 @@
 {
   "name": "@emqx/emqx-ui",
-  "version": "1.0.16-0",
+  "version": "1.0.17-0",
   "private": false,
   "description": "EMQ X UI Library",
   "main": "lib/emqx-ui.umd.min.js",
