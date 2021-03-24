@@ -140,6 +140,25 @@
       <emqx-breadcrumb-item>活动详情</emqx-breadcrumb-item>
     </emqx-breadcrumb>
   </div>
+  <h2>Upload</h2>
+  <div class="show-item">
+    <emqx-upload drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
+      <div>
+        <img src="./upload.png" alt="upload" width="82" />
+      </div>
+      <div>
+        <emqx-button icon="el-icon-upload2">上传文件</emqx-button>
+      </div>
+      <div>
+        <emqx-button type="text" href="javascript:;">下载 CSV 模版</emqx-button>
+      </div>
+      <template #tip>
+        <div class="el-upload__tip">
+          只能上传 jpg/png 文件，且不超过 500kb
+        </div>
+      </template>
+    </emqx-upload>
+  </div>
 </template>
 
 <script lang="ts">
