@@ -25,6 +25,7 @@ import MenuItem from './MenuItem'
 import Breadcrumb from './Breadcrumb'
 import BreadcrumbItem from './BreadcrumbItem'
 import Upload from './Upload'
+import TagsCheckbox from './TagsCheckbox'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -57,6 +58,7 @@ const components = [
   Breadcrumb,
   BreadcrumbItem,
   Upload,
+  TagsCheckbox,
 ]
 
 const install = (Vue: App) => {
@@ -97,6 +99,7 @@ const packages = {
   Breadcrumb,
   BreadcrumbItem,
   Upload,
+  TagsCheckbox,
 }
 
 export default packages
