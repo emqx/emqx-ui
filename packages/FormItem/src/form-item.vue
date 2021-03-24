@@ -40,6 +40,8 @@ export default defineComponent({
     }
     .float-right {
       float: right;
+      position: relative;
+      z-index: 1;
     }
   }
 }
