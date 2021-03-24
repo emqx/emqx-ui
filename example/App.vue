@@ -159,6 +159,10 @@
       </template>
     </emqx-upload>
   </div>
+  <h2>Tags Checkbox</h2>
+  <div class="show-item">
+    <emqx-tags-checkbox v-model="testTagsVal" :tags="testTagsOptions"></emqx-tags-checkbox>
+  </div>
 </template>
 
 <script lang="ts">
@@ -198,10 +202,13 @@ export default defineComponent({
         address: '上海市普陀区金沙江路 1516 弄',
       },
     ])
+    const testTagsVal = ref(['test1'])
+    const testTagsOptions = ['test1', 'test2', 'test3']
     const test = () => {
       console.log(testInput.value)
       console.log(testSelect.value)
       console.log(testSwitch.value)
+      console.log(testTagsVal.value)
     }
     const onSubmit = () => {
       console.log(testForm.value)
@@ -213,6 +220,8 @@ export default defineComponent({
       testSwitch,
       testForm,
       testTable,
+      testTagsVal,
+      testTagsOptions,
       test,
       dialogVisible,
       onSubmit,
@@ -223,7 +232,7 @@ export default defineComponent({
 
 <style lang="scss">
 #app {
-  padding: 120px;
+  padding: 60px 60px 200px 60px;
 }
 .show-item {
   margin-bottom: 20px;
