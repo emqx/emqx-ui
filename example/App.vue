@@ -150,7 +150,7 @@
         <emqx-button icon="el-icon-upload2">上传文件</emqx-button>
       </div>
       <div>
-        <emqx-button type="text" href="javascript:;">下载 CSV 模版</emqx-button>
+        <emqx-button type="text">下载 CSV 模版</emqx-button>
       </div>
       <template #tip>
         <div class="el-upload__tip">
@@ -162,6 +162,11 @@
   <h2>Tags Checkbox</h2>
   <div class="show-item">
     <emqx-tags-checkbox v-model="testTagsVal" :tags="testTagsOptions"></emqx-tags-checkbox>
+  </div>
+  <h2>Key Value Editor</h2>
+  <div class="show-item">
+    <emqx-button type="text" @click="addOneRow">添加</emqx-button>
+    <emqx-key-value-editor ref="KeyValueEditorRef" v-model="kvTest"></emqx-key-value-editor>
   </div>
 </template>
 
@@ -204,14 +209,20 @@ export default defineComponent({
     ])
     const testTagsVal = ref(['test1'])
     const testTagsOptions = ['test1', 'test2', 'test3']
+    const kvTest = ref({})
     const test = () => {
       console.log(testInput.value)
       console.log(testSelect.value)
       console.log(testSwitch.value)
       console.log(testTagsVal.value)
+      console.log(kvTest.value)
     }
     const onSubmit = () => {
       console.log(testForm.value)
+    }
+    const KeyValueEditorRef = ref()
+    const addOneRow = () => {
+      KeyValueEditorRef.value.addItem()
     }
     return {
       testInput,
@@ -225,6 +236,9 @@ export default defineComponent({
       test,
       dialogVisible,
       onSubmit,
+      kvTest,
+      addOneRow,
+      KeyValueEditorRef,
     }
   },
 })
