@@ -2,7 +2,7 @@
   <el-container class="emqx-container" :class="normal ? 'is-normal' : ''">
     <template v-if="normal">
       <emqx-aside :width="`${navWidth}px`">
-        <div v-if="fixedNav" class="nav-container" ref="navContainer" :width="`${navWidth}px`">
+        <div v-if="fixedNav" class="nav-container" ref="navContainer" :style="`width: ${navWidth}px`">
           <slot name="nav"></slot>
         </div>
         <slot v-else name="nav"></slot>
