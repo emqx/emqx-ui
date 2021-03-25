@@ -22,6 +22,7 @@
         size="small"
         @change="handleSelect"
         @keyup.enter="handleInputConfirm"
+        @blur="handleInputConfirm"
         :class="{ 'select-hidden': !inputVisible }"
       >
         <el-option v-for="item in options" :key="item" :label="item" :value="item"> </el-option>
@@ -54,6 +55,10 @@ export default defineComponent({
     allowAdd: {
       type: Boolean,
       default: false,
+    },
+    requestToAdd: {
+      type: Function,
+      required: false,
     },
   },
   setup(props, ctx) {
@@ -88,16 +93,25 @@ export default defineComponent({
       selectedTag.value = ''
     }
 
+    const addTag = async (value: string) => {
+      if (props.requestToAdd) {
+        await props.requestToAdd(value)
+        tagArr.value.push(value)
+      } else {
+        tagArr.value.push(value)
+      }
+    }
+
     const handleInputConfirm = () => {
       const inputValue = tagSelect.value.$refs.reference.modelValue
       if (inputValue) {
-        tagArr.value.push(inputValue)
+        addTag(inputValue)
       }
       initInput()
     }
 
     const handleSelect = (item: string) => {
-      tagArr.value.push(item)
+      addTag(item)
       initInput()
     }
 
