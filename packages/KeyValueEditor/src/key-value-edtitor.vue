@@ -3,7 +3,7 @@
     <div v-for="(item, index) in listData" :key="index" class="item-col">
       <emqx-row>
         <emqx-col :span="11" class="item-col__key">
-          <emqx-input placeholder="键" v-model="item.key" @input="handleInputChange"></emqx-input>
+          <emqx-input placeholder="key" v-model="item.key" @input="handleInputChange"></emqx-input>
         </emqx-col>
         <emqx-col :span="11" class="item-col__value">
           <emqx-input placeholder="value" v-model="item.value" @input="handleInputChange"></emqx-input>
