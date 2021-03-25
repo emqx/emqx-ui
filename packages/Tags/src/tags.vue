@@ -4,13 +4,13 @@
       v-for="tag in tagArr"
       type="info"
       :key="tag"
-      :closable="canAdd"
+      :closable="allowAdd"
       :disable-transitions="false"
       @close="handleClose(tag)"
     >
       {{ tag }}
     </el-tag>
-    <div class="new-tag-input-wrap" v-if="canAdd">
+    <div class="new-tag-input-wrap" v-if="allowAdd">
       <el-select
         class="tag-select"
         v-model="selectedTag"
@@ -52,7 +52,7 @@ export default defineComponent({
       type: Array as PropType<Array<TagOption>>,
       default: [],
     },
-    canAdd: {
+    allowAdd: {
       type: Boolean,
       default: false,
     },
