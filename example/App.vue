@@ -168,6 +168,10 @@
     <emqx-button type="text" @click="addOneRow">添加</emqx-button>
     <emqx-key-value-editor ref="KeyValueEditorRef" v-model="kvTest"></emqx-key-value-editor>
   </div>
+  <h2>Tags</h2>
+  <emqx-tags :options="tagOptions"></emqx-tags>
+  <h2>Tags Can Add</h2>
+  <emqx-tags :options="tagOptions" can-add></emqx-tags>
 </template>
 
 <script lang="ts">
@@ -224,6 +228,14 @@ export default defineComponent({
     const addOneRow = () => {
       KeyValueEditorRef.value.addItem()
     }
+    const tagOptions = [
+      {
+        value: '标签四',
+      },
+      {
+        value: '标签五',
+      },
+    ]
     return {
       testInput,
       testSelect,
@@ -239,6 +251,7 @@ export default defineComponent({
       kvTest,
       addOneRow,
       KeyValueEditorRef,
+      tagOptions,
     }
   },
 })
