@@ -170,8 +170,8 @@
   </div>
   <h2>Tags</h2>
   <emqx-tags :options="tagOptions"></emqx-tags>
-  <h2>Tags Can Add</h2>
-  <emqx-tags :options="tagOptions" can-add></emqx-tags>
+  <h2>Tags Allow Add</h2>
+  <emqx-tags :options="tagOptions" allow-add></emqx-tags>
 </template>
 
 <script lang="ts">
