@@ -165,7 +165,7 @@
   <h2>Tags</h2>
   <emqx-tags v-model="tagResult" :options="tagOptions"></emqx-tags>
   <h2>Tags Allow Add</h2>
-  <emqx-tags v-model="tagResult" allow-add :options="tagOptions"></emqx-tags>
+  <emqx-tags v-model="tagResult" allow-add :options="tagOptions" :request-to-add="fakeRequestToAddTag"></emqx-tags>
 </template>
 
 <script lang="ts">
@@ -224,6 +224,14 @@ export default defineComponent({
     }
     const tagResult = ref(['标签一', '标签二', '标签三'])
     const tagOptions = ref(['标签四', '标签五'])
+    const fakeRequestToAddTag = async (value: string) => {
+      console.log(value)
+      await new Promise(resolve => {
+        setTimeout(() => {
+          resolve(1)
+        }, 2000)
+      })
+    }
     return {
       testInput,
       testSelect,
@@ -241,6 +249,7 @@ export default defineComponent({
       KeyValueEditorRef,
       tagResult,
       tagOptions,
+      fakeRequestToAddTag,
     }
   },
 })
