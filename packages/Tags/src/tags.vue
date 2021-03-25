@@ -24,7 +24,7 @@
         @keyup.enter="handleInputConfirm"
         :class="{ 'select-hidden': !inputVisible }"
       >
-        <el-option v-for="item in options" :key="item.value" :label="item.value" :value="item.value"> </el-option>
+        <el-option v-for="item in options" :key="item" :label="item" :value="item"> </el-option>
       </el-select>
       <emqx-button v-if="!inputVisible" class="button-new-tag" size="small" @click="showInput">+ 新增标签</emqx-button>
     </div>
@@ -32,13 +32,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, nextTick, ref, toRefs, PropType } from 'vue'
+import { defineComponent, nextTick, ref, PropType, computed } from 'vue'
 import { ElTag, ElSelect, ElOption } from 'element-plus'
-
-interface TagOption {
-  value: string
-  [key: string]: string
-}
 
 export default defineComponent({
   name: 'EmqxTags',
@@ -48,8 +43,12 @@ export default defineComponent({
     ElOption,
   },
   props: {
+    modelValue: {
+      type: Array as PropType<Array<string>>,
+      required: true,
+    },
     options: {
-      type: Array as PropType<Array<TagOption>>,
+      type: Array as PropType<Array<string>>,
       default: [],
     },
     allowAdd: {
@@ -57,46 +56,55 @@ export default defineComponent({
       default: false,
     },
   },
-  setup() {
-    const state = reactive({
-      tagArr: ['标签一', '标签二', '标签三'],
-      inputVisible: false,
-      selectedTag: '',
-    })
+  setup(props, ctx) {
+    const inputVisible = ref(false)
+
+    const selectedTag = ref('')
 
     const tagSelect = ref(ElSelect)
 
+    const tagArr = computed({
+      get: () => {
+        return props.modelValue
+      },
+      set: (value: Array<string>) => {
+        ctx.emit('update:modelValue', value)
+      },
+    })
+
     const handleClose = (tag: string) => {
-      state.tagArr.splice(state.tagArr.indexOf(tag), 1)
+      tagArr.value.splice(tagArr.value.indexOf(tag), 1)
     }
 
     const showInput = () => {
-      state.inputVisible = true
+      inputVisible.value = true
       nextTick(() => {
         tagSelect.value.$refs.reference.focus()
       })
     }
 
     const initInput = () => {
-      state.inputVisible = false
-      state.selectedTag = ''
+      inputVisible.value = false
+      selectedTag.value = ''
     }
 
     const handleInputConfirm = () => {
       const inputValue = tagSelect.value.$refs.reference.modelValue
       if (inputValue) {
-        state.tagArr.push(inputValue)
+        tagArr.value.push(inputValue)
       }
       initInput()
     }
 
     const handleSelect = (item: string) => {
-      state.tagArr.push(item)
+      tagArr.value.push(item)
       initInput()
     }
 
     return {
-      ...toRefs(state),
+      inputVisible,
+      selectedTag,
+      tagArr,
       tagSelect,
       handleClose,
       showInput,

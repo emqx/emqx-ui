@@ -153,15 +153,9 @@
         <emqx-button type="text">下载 CSV 模版</emqx-button>
       </div>
       <template #tip>
-        <div class="el-upload__tip">
-          只能上传 jpg/png 文件，且不超过 500kb
-        </div>
+        <div class="el-upload__tip">只能上传 jpg/png 文件，且不超过 500kb</div>
       </template>
     </emqx-upload>
-  </div>
-  <h2>Tags Checkbox</h2>
-  <div class="show-item">
-    <emqx-tags-checkbox v-model="testTagsVal" :tags="testTagsOptions"></emqx-tags-checkbox>
   </div>
   <h2>Key Value Editor</h2>
   <div class="show-item">
@@ -169,9 +163,9 @@
     <emqx-key-value-editor ref="KeyValueEditorRef" v-model="kvTest"></emqx-key-value-editor>
   </div>
   <h2>Tags</h2>
-  <emqx-tags :options="tagOptions"></emqx-tags>
+  <emqx-tags v-model="tagResult" :options="tagOptions"></emqx-tags>
   <h2>Tags Allow Add</h2>
-  <emqx-tags :options="tagOptions" allow-add></emqx-tags>
+  <emqx-tags v-model="tagResult" allow-add :options="tagOptions"></emqx-tags>
 </template>
 
 <script lang="ts">
@@ -228,14 +222,8 @@ export default defineComponent({
     const addOneRow = () => {
       KeyValueEditorRef.value.addItem()
     }
-    const tagOptions = [
-      {
-        value: '标签四',
-      },
-      {
-        value: '标签五',
-      },
-    ]
+    const tagResult = ref(['标签一', '标签二', '标签三'])
+    const tagOptions = ref(['标签四', '标签五'])
     return {
       testInput,
       testSelect,
@@ -251,6 +239,7 @@ export default defineComponent({
       kvTest,
       addOneRow,
       KeyValueEditorRef,
+      tagResult,
       tagOptions,
     }
   },
