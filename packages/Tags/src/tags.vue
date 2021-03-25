@@ -96,10 +96,8 @@ export default defineComponent({
     const addTag = async (value: string) => {
       if (props.requestToAdd) {
         await props.requestToAdd(value)
-        tagArr.value.push(value)
-      } else {
-        tagArr.value.push(value)
       }
+      tagArr.value.push(value)
     }
 
     const handleInputConfirm = () => {
