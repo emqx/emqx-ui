@@ -23,6 +23,7 @@
         @keyup.enter="handleInputConfirm('enter')"
         @blur="handleInputConfirm('blur')"
         :class="{ 'select-hidden': !inputVisible }"
+        :popper-class="!inputValue ? 'popper-hidden' : ''"
       >
         <el-option v-for="item in options" :key="item" :label="item" :value="item" @mousedown="handleMousedown(item)">
         </el-option>
@@ -79,6 +80,10 @@ export default defineComponent({
       },
     })
 
+    const inputValue = computed(() => {
+      return tagSelect?.value?.$refs?.reference?.modelValue
+    })
+
     const handleClose = (tag: string) => {
       tagArr.value.splice(tagArr.value.indexOf(tag), 1)
     }
@@ -113,9 +118,8 @@ export default defineComponent({
         lockedAdd.value = false
         return
       }
-      const inputValue = tagSelect.value.$refs.reference.modelValue
-      if (inputValue) {
-        addTag(inputValue)
+      if (inputValue.value) {
+        addTag(inputValue.value)
       }
       initInput()
     }
@@ -124,6 +128,7 @@ export default defineComponent({
       inputVisible,
       selectedTag,
       tagArr,
+      inputValue,
       tagSelect,
       handleClose,
       showInput,
@@ -186,5 +191,8 @@ export default defineComponent({
       display: none;
     }
   }
+}
+.popper-hidden {
+  display: none;
 }
 </style>
