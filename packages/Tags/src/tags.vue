@@ -20,12 +20,12 @@
         default-first-option
         placeholder="请输入标签"
         size="small"
-        @change="handleSelect"
-        @keyup.enter="handleInputConfirm"
-        @blur="handleInputConfirm"
+        @keyup.enter="handleInputConfirm('enter')"
+        @blur="handleInputConfirm('blur')"
         :class="{ 'select-hidden': !inputVisible }"
       >
-        <el-option v-for="item in options" :key="item" :label="item" :value="item"> </el-option>
+        <el-option v-for="item in options" :key="item" :label="item" :value="item" @mousedown="handleMousedown(item)">
+        </el-option>
       </el-select>
       <emqx-button v-if="!inputVisible" class="button-new-tag" size="small" @click="showInput">+ 新增标签</emqx-button>
     </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, ref, PropType, computed } from 'vue'
+import { defineComponent, nextTick, ref, PropType, computed, watch } from 'vue'
 import { ElTag, ElSelect, ElOption } from 'element-plus'
 
 export default defineComponent({
@@ -68,6 +68,8 @@ export default defineComponent({
 
     const tagSelect = ref(ElSelect)
 
+    const lockedAdd = ref(false)
+
     const tagArr = computed({
       get: () => {
         return props.modelValue
@@ -94,23 +96,28 @@ export default defineComponent({
     }
 
     const addTag = async (value: string) => {
+      tagArr.value.push(value)
       if (props.requestToAdd) {
         await props.requestToAdd(value)
       }
-      tagArr.value.push(value)
     }
 
-    const handleInputConfirm = () => {
+    const handleMousedown = (value: string) => {
+      lockedAdd.value = true
+      addTag(value)
+      initInput()
+    }
+
+    const handleInputConfirm = (sourceEvent: 'blur' | 'enter') => {
+      if (lockedAdd.value && sourceEvent === 'blur') {
+        return
+      }
       const inputValue = tagSelect.value.$refs.reference.modelValue
       if (inputValue) {
         addTag(inputValue)
       }
       initInput()
-    }
-
-    const handleSelect = (item: string) => {
-      addTag(item)
-      initInput()
+      lockedAdd.value = false
     }
 
     return {
@@ -121,7 +128,7 @@ export default defineComponent({
       handleClose,
       showInput,
       handleInputConfirm,
-      handleSelect,
+      handleMousedown,
     }
   },
 })
