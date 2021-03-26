@@ -62,7 +62,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../../style/global.scss';
 .emqx-container {
   &.is-normal {
     margin-right: auto;
