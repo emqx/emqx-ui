@@ -15,8 +15,11 @@ jobs:
       run: yarn install
     - name: yarn lib
       run: yarn lib
-    - name: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: npm publish --access=public
-      
+    - id: publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        access: publish
+    - if: steps.publish.outputs.type != 'none'
+      run: |
+        echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
