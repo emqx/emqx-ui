@@ -1,5 +1,8 @@
 <template>
   <el-submenu class="emqx-submenu">
+    <template v-if="$slots.title" #title>
+      <slot name="title"></slot>
+    </template>
     <slot></slot>
   </el-submenu>
 </template>
