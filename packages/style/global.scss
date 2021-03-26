@@ -1,3 +1,31 @@
+.el-message {
+  border-radius: 8px !important;
+}
+.el-message--success {
+  background: linear-gradient(133deg, #E1F4EE 0%, #DEF0F1 100%) !important;
+  border: none !important;
+  .el-message__content,
+  .el-icon-success {
+    color: #00B173 !important;
+  }
+}
+.el-message--error {
+  background: linear-gradient(133deg, #F9E5EB 0%, #FCE2DC 100%) !important;
+  border: none !important;
+  .el-message__content,
+  .el-icon-error {
+    color: #F16538 !important;
+  }
+}
+.el-message--warning {
+  background: linear-gradient(133deg, #FDF2E2 0%, #FAECD9 100%);
+  border: none !important;
+  .el-message__content,
+  .el-icon-warning {
+    color: #EC8E18 !important;
+  }
+}
+
 @media screen and (max-width: 2560px) {
   .emqx-container.is-normal,
   .emqx-header-container {

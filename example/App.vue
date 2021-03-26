@@ -170,6 +170,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import { ElMessage } from 'element-plus'
 
 export default defineComponent({
   name: 'App',
@@ -217,6 +218,21 @@ export default defineComponent({
     }
     const onSubmit = () => {
       console.log(testForm.value)
+      ElMessage({
+        type: 'success',
+        message: 'success',
+        duration: 0,
+      })
+      ElMessage({
+        type: 'error',
+        message: 'error',
+        duration: 0,
+      })
+      ElMessage({
+        type: 'warning',
+        message: 'warning',
+        duration: 0,
+      })
     }
     const KeyValueEditorRef = ref()
     const addOneRow = () => {

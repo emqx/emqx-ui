@@ -27,6 +27,7 @@ import BreadcrumbItem from './BreadcrumbItem'
 import Upload from './Upload'
 import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
+import './style/global.scss'
 
 interface VueWindow extends Window {
   Vue?: App
