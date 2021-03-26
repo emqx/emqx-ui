@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, ref, PropType, computed, watch } from 'vue'
+import { defineComponent, nextTick, ref, PropType, computed } from 'vue'
 import { ElTag, ElSelect, ElOption } from 'element-plus'
 
 export default defineComponent({
@@ -110,6 +110,7 @@ export default defineComponent({
 
     const handleInputConfirm = (sourceEvent: 'blur' | 'enter') => {
       if (lockedAdd.value && sourceEvent === 'blur') {
+        lockedAdd.value = false
         return
       }
       const inputValue = tagSelect.value.$refs.reference.modelValue
@@ -117,7 +118,6 @@ export default defineComponent({
         addTag(inputValue)
       }
       initInput()
-      lockedAdd.value = false
     }
 
     return {
