@@ -1,0 +1,22 @@
+name: Node.js Package Publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.15'
+    - name: yarn install
+      run: yarn install
+    - name: yarn lib
+      run: yarn lib
+    - name: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npm publish --access=public
+      
