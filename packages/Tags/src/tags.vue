@@ -23,7 +23,7 @@
         @keyup.enter="handleInputConfirm('enter')"
         @blur="handleInputConfirm('blur')"
         :class="{ 'select-hidden': !inputVisible }"
-        :popper-class="{ 'popper-hidden': !inputValue }"
+        :popper-class="!inputValue ? 'popper-hidden' : ''"
       >
         <el-option v-for="item in options" :key="item" :label="item" :value="item" @mousedown="handleMousedown(item)">
         </el-option>
