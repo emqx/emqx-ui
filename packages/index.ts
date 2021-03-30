@@ -27,6 +27,7 @@ import BreadcrumbItem from './BreadcrumbItem'
 import Upload from './Upload'
 import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
+import Loading from './Loading'
 import './style/global.scss'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
@@ -69,8 +70,11 @@ const components = [
   KeyValueEditor,
 ]
 
+const plugins = [Loading]
+
 const install = (Vue: App) => {
   components.map(component => Vue.component(component.name, component))
+  plugins.forEach(plugin => Vue.use(plugin))
 }
 
 const _window: VueWindow = window
