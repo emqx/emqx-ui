@@ -28,6 +28,7 @@ import Upload from './Upload'
 import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
 import './style/global.scss'
+import locale from 'element-plus/lib/locale'
 
 interface VueWindow extends Window {
   Vue?: App
@@ -76,6 +77,7 @@ if (typeof _window !== 'undefined' && _window.Vue) {
 
 const packages = {
   install,
+  locale,
   Button,
   Input,
   Row,
