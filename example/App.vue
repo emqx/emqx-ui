@@ -163,9 +163,17 @@
     <emqx-key-value-editor ref="KeyValueEditorRef" v-model="kvTest"></emqx-key-value-editor>
   </div>
   <h2>Tags</h2>
-  <emqx-tags v-model="tagResult" :options="tagOptions"></emqx-tags>
+  <div class="show-item">
+    <emqx-tags v-model="tagResult" :options="tagOptions"></emqx-tags>
+  </div>
   <h2>Tags Allow Add</h2>
-  <emqx-tags v-model="tagResult" allow-add :options="tagOptions" :request-to-add="fakeRequestToAddTag"></emqx-tags>
+  <div class="show-item">
+    <emqx-tags v-model="tagResult" allow-add :options="tagOptions" :request-to-add="fakeRequestToAddTag"></emqx-tags>
+  </div>
+  <h2>Editor</h2>
+  <div class="show-item">
+    <emqx-editor id="test" v-model="jsonValue" :lang="editorLang" :height="editorHeight"></emqx-editor>
+  </div>
 </template>
 
 <script lang="ts">
@@ -209,12 +217,16 @@ export default defineComponent({
     const testTagsVal = ref(['test1'])
     const testTagsOptions = ['test1', 'test2', 'test3']
     const kvTest = ref({})
+    const jsonValue = ref(JSON.stringify({ messge: 'hello' }, null, 2))
+    const editorHeight = ref(200)
+    const editorLang = ref('json')
     const test = () => {
       console.log(testInput.value)
       console.log(testSelect.value)
       console.log(testSwitch.value)
       console.log(testTagsVal.value)
       console.log(kvTest.value)
+      console.log(jsonValue.value)
     }
     const onSubmit = () => {
       console.log(testForm.value)
@@ -266,6 +278,9 @@ export default defineComponent({
       tagResult,
       tagOptions,
       fakeRequestToAddTag,
+      jsonValue,
+      editorHeight,
+      editorLang,
     }
   },
 })
