@@ -24,7 +24,7 @@ const getMonacoOptions = (options: ToRefs<CustomMonacoOption>): Monaco.editor.IS
     scrollbar: {
       horizontal: options.scrollbarStatus.value,
       vertical: options.scrollbarStatus.value,
-      useShadows: true,
+      useShadows: false,
       alwaysConsumeMouseWheel: false,
     },
     smoothScrolling: true,
