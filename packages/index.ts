@@ -119,4 +119,6 @@ const packages = {
   Editor,
 }
 
+export const EmqxMessage = Message
+
 export default packages
