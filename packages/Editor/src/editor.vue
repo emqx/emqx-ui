@@ -76,7 +76,9 @@ export default defineComponent({
 
 <style lang="scss">
 .emqx-editor {
+  padding: 10px 0px;
   border: 1px solid #d7dae1;
+  border-radius: 8px;
 }
 .emqx-editor-view {
   height: 100%;
