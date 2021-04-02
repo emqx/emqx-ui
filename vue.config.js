@@ -31,5 +31,15 @@ module.exports = {
         languages: ['json', 'sql'],
       }),
     ],
+    externals: [
+      {
+        vue: {
+          root: 'Vue',
+          commonjs: 'vue',
+          commonjs2: 'vue',
+        },
+      },
+      /^element-plus.*/,
+    ],
   },
 }
