@@ -87,7 +87,6 @@ if (typeof _window !== 'undefined' && _window.Vue) {
 
 const packages = {
   install,
-  locale,
   Button,
   Input,
   Row,
