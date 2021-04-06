@@ -101,10 +101,10 @@ export default defineComponent({
     }
 
     const addTag = async (value: string) => {
-      tagArr.value.push(value)
       if (props.requestToAdd) {
         await props.requestToAdd(value)
       }
+      tagArr.value.push(value)
     }
 
     const handleMousedown = (value: string) => {
