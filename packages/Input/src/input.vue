@@ -14,11 +14,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-input {
-  .el-input__inner,
-  .el-textarea__inner {
-    border-radius: 8px;
-  }
-}
-</style>
+<style lang="scss"></style>

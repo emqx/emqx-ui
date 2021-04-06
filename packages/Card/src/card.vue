@@ -27,18 +27,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-card {
-  &.border-none {
-    .el-card {
-      border: none;
-    }
-  }
-  .el-card {
-    border-radius: 8px;
-    .el-card__body {
-      padding: 32px;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

@@ -16,8 +16,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-button.el-button {
-  border-radius: 8px;
-}
-</style>
+<style lang="scss"></style>
