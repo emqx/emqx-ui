@@ -1,0 +1,40 @@
+.emqx-key-value-editor {
+  border: 1px solid #d7dae1;
+  width: 100%;
+  border-radius: 8px;
+
+  .item-col {
+    &:not(:last-child) {
+      .el-col {
+        border-bottom: 1px solid #d7dae1;
+      }
+    }
+
+    .el-col {
+      border-radius: 0px;
+    }
+  }
+
+  .item-col__value {
+    border-right: 1px solid #d7dae1;
+    border-left: 1px solid #d7dae1;
+  }
+
+  .item-col__oper {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .el-input__inner {
+    border: none;
+  }
+
+  .emqx-button {
+    padding: 0px;
+    min-height: 100%;
+
+    i {
+      font-size: 18px;
+    }
+  }
+}

@@ -61,11 +61,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-container {
-  &.is-normal {
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-</style>
+<style lang="scss"></style>
