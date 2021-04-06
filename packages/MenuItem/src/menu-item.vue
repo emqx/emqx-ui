@@ -19,13 +19,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-menu-item.el-menu-item {
-  border-radius: 8px;
-  &.is-active {
-    color: #fff;
-    background: #4c63ee;
-    box-shadow: 5px 6px 12px 0 #4c63ee52;
-  }
-}
-</style>
+<style lang="scss"></style>

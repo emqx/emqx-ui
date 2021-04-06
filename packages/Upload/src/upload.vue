@@ -19,11 +19,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-upload {
-  .el-upload-dragger {
-    height: 100%;
-    padding: 20px 0;
-  }
-}
-</style>
+<style lang="scss"></style>

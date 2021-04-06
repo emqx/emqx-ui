@@ -25,24 +25,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-.emqx-form-item {
-  &.with-operation {
-    .el-form-item__label {
-      width: 100%;
-      padding-right: 0;
-      text-align: left;
-      &::after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-    }
-    .float-right {
-      float: right;
-      position: relative;
-      z-index: 1;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
