@@ -29,7 +29,6 @@ import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
 import Editor from './Editor'
 import Loading from './Loading'
-import './style/global.scss'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
