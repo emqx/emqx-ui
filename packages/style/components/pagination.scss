@@ -1,3 +1,5 @@
+@import "../theme.scss";
+
 .emqx-pagination {
   &.el-pagination.is-background {
 
@@ -16,7 +18,7 @@
       background-color: #f3f4f7;
 
       &:not(.disabled).active {
-        color: #4c63ee;
+        color: $--color-primary;
         background-color: #f3f4f7;
       }
     }
