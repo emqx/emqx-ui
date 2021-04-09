@@ -1,5 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const CopyPlugin = require('copy-webpack-plugin')
+
+let externals = []
+if (process.env.NODE_ENV === 'production') {
+  externals = [/^element-plus.*/]
+}
 
 module.exports = {
   lintOnSave: false,
@@ -30,16 +37,8 @@ module.exports = {
         output: 'static/',
         languages: ['json', 'sql'],
       }),
+      new CopyPlugin([{ from: 'packages/style', to: 'style' }]),
     ],
-    externals: [
-      {
-        vue: {
-          root: 'Vue',
-          commonjs: 'vue',
-          commonjs2: 'vue',
-        },
-      },
-      /^element-plus.*/,
-    ],
+    externals: externals,
   },
 }
