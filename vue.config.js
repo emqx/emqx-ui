@@ -30,7 +30,7 @@ module.exports = {
       })
   },
   configureWebpack: {
-    plugins: [new CopyPlugin([{ from: 'packages/style', to: 'style' }])],
+    plugins: [new CopyPlugin([{ from: 'packages/styles', to: 'styles' }])],
     externals: externals,
   },
 }
