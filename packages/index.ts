@@ -28,6 +28,7 @@ import Upload from './Upload'
 import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
 import Loading from './Loading'
+import Avatar from './Avatar'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -67,6 +68,7 @@ const components = [
   Upload,
   Tags,
   KeyValueEditor,
+  Avatar,
 ]
 
 const plugins = [Loading]
@@ -112,6 +114,7 @@ const packages = {
   Upload,
   Tags,
   KeyValueEditor,
+  Avatar,
 }
 
 export const EmqxMessage = Message
