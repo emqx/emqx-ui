@@ -170,6 +170,18 @@
   <div class="show-item">
     <emqx-tags v-model="tagResult" allow-add :options="tagOptions" :request-to-add="fakeRequestToAddTag"></emqx-tags>
   </div>
+  <h2>Avatar With Menu</h2>
+  <div class="show-item" style="text-align: right">
+    <emqx-avatar icon="el-icon-user-solid">
+      <template #menu>
+        <emqx-menu mode="vertical">
+          <emqx-menu-item index="1-1">选项1</emqx-menu-item>
+          <emqx-menu-item index="1-2">选项2</emqx-menu-item>
+          <emqx-menu-item index="1-3">选项3</emqx-menu-item>
+        </emqx-menu>
+      </template>
+    </emqx-avatar>
+  </div>
 </template>
 
 <script lang="ts">
