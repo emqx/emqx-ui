@@ -27,7 +27,6 @@ import BreadcrumbItem from './BreadcrumbItem'
 import Upload from './Upload'
 import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
-import Editor from './Editor'
 import Loading from './Loading'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
@@ -68,7 +67,6 @@ const components = [
   Upload,
   Tags,
   KeyValueEditor,
-  Editor,
 ]
 
 const plugins = [Loading]
@@ -114,7 +112,6 @@ const packages = {
   Upload,
   Tags,
   KeyValueEditor,
-  Editor,
 }
 
 export const EmqxMessage = Message
