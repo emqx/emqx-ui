@@ -5,7 +5,7 @@ import './emqx-ui-variables.scss'
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import 'dayjs/locale/zh-cn'
 import locale from 'element-plus/lib/locale'
-import '../packages/style/index.scss'
+import '../packages/styles/index.scss'
 
 locale.use(lang)
 
