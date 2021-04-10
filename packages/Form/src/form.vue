@@ -1,5 +1,5 @@
 <template>
-  <el-form class="emqx-form">
+  <el-form class="emqx-form" ref="form">
     <slot></slot>
   </el-form>
 </template>

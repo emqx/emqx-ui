@@ -1,5 +1,5 @@
 <template>
-  <el-select class="emqx-select">
+  <el-select class="emqx-select" ref="select">
     <slot></slot>
   </el-select>
 </template>
