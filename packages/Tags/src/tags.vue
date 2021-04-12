@@ -100,8 +100,13 @@ export default defineComponent({
       selectedTag.value = ''
     }
 
+    const hasTagBefore = (name: string) => props.options.findIndex((item: string) => item === name) > -1
+
     const addTag = async (value: string) => {
-      if (props.requestToAdd) {
+      // If this label didn't exist before
+      // And request to add prop is exist
+      // request to add
+      if (!hasTagBefore(value) && props.requestToAdd) {
         await props.requestToAdd(value)
       }
       tagArr.value.push(value)
