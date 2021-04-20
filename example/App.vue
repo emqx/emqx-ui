@@ -182,6 +182,15 @@
       </template>
     </emqx-avatar>
   </div>
+  <h2>Checkbox</h2>
+  <div class="show-item">
+    <emqx-checkbox v-model="checked">备选项</emqx-checkbox>
+  </div>
+  <h2>Radio</h2>
+  <div class="show-item">
+    <emqx-radio v-model="radio" label="1">备选项1</emqx-radio>
+    <emqx-radio v-model="radio" label="2">备选项2</emqx-radio>
+  </div>
 </template>
 
 <script lang="ts">
@@ -266,6 +275,8 @@ export default defineComponent({
         }, 2000)
       })
     }
+    const checked = ref(true)
+    const radio = ref('1')
     return {
       testInput,
       testSelect,
@@ -285,6 +296,8 @@ export default defineComponent({
       tagOptions,
       fakeRequestToAddTag,
       jsonValue,
+      checked,
+      radio,
     }
   },
 })
