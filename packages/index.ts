@@ -29,6 +29,8 @@ import Tags from './Tags'
 import KeyValueEditor from './KeyValueEditor'
 import Loading from './Loading'
 import Avatar from './Avatar'
+import Checkbox from './Checkbox'
+import Radio from './Radio'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -69,6 +71,8 @@ const components = [
   Tags,
   KeyValueEditor,
   Avatar,
+  Checkbox,
+  Radio,
 ]
 
 const plugins = [Loading]
@@ -115,6 +119,8 @@ const packages = {
   Tags,
   KeyValueEditor,
   Avatar,
+  Checkbox,
+  Radio,
 }
 
 export const EmqxMessage = Message
