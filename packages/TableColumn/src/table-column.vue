@@ -1,7 +1,7 @@
 <template>
   <el-table-column class="emqx-table-column">
     <template v-if="$slots.default" #default="scope">
-      <slot :row="scope.row"></slot>
+      <slot :row="scope.row" :index="scope.$index"></slot>
     </template>
   </el-table-column>
 </template>
