@@ -1,5 +1,7 @@
 <template>
-  <el-option class="emqx-option"></el-option>
+  <el-option class="emqx-option">
+    <slot></slot>
+  </el-option>
 </template>
 
 <script lang="ts">

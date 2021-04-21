@@ -1,3 +1,16 @@
 .emqx-button.el-button {
   border-radius: 8px;
+  &.is-circle {
+    padding: 16px;
+    width: 47px;
+    height: 47px;
+    i {
+      font-size: 14px;
+    }
+  }
+  &.el-button--mini.is-circle {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+  }
 }

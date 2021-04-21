@@ -10,6 +10,10 @@
     <emqx-button type="primary" size="small">test</emqx-button>
     <emqx-button type="primary" size="mini">test</emqx-button>
   </div>
+  <div class="show-item">
+    <emqx-button icon="el-icon-search" circle></emqx-button>
+    <emqx-button icon="el-icon-plus" circle size="mini"></emqx-button>
+  </div>
   <h2>Input</h2>
   <div class="show-item">
     <emqx-input v-model="testInput" placeholder="test" style="margin-bottom: 20px"></emqx-input>
