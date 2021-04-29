@@ -3666,10 +3666,10 @@ elegant-spinner@^1.0.1:
   resolved "https://registry.npm.taobao.org/elegant-spinner/download/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
   integrity sha1-2wQ1IcldfjA/2PNFvtwzSc+wcp4=
 
-element-plus@^1.0.2-beta.40:
-  version "1.0.2-beta.40"
-  resolved "https://registry.npmjs.org/element-plus/-/element-plus-1.0.2-beta.40.tgz#30fc9b161496ae587fab86235c80b728ea43d909"
-  integrity sha512-8S7JbBpJLUa3ggexuKuKeyrTo451gMDHa/BKJVFiHSyexcHPgnHQwHf2nIoZvY1w6FzmZPdBdZ3NoDLXu51SIw==
+element-plus@^1.0.2-beta.41:
+  version "1.0.2-beta.41"
+  resolved "https://registry.npmjs.org/element-plus/-/element-plus-1.0.2-beta.41.tgz#9c234b536b3401d042505c003e579bd65081f0f0"
+  integrity sha512-GikmQdajaKB5oLxfHxhKXGXtiNoaN1wYiLr9aRx+yxwLx3nPDfoBx60+nrZoN6BOCk2M0HjBVj9TtA214WLRYw==
   dependencies:
     "@popperjs/core" "^2.4.4"
     "@types/lodash" "^4.14.161"
