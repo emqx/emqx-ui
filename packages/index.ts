@@ -31,6 +31,9 @@ import Loading from './Loading'
 import Avatar from './Avatar'
 import Checkbox from './Checkbox'
 import Radio from './Radio'
+import Dropdown from './Dropdown'
+import DropdownMenu from './DropdownMenu'
+import DropdownItem from './DropdownItem'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -73,6 +76,9 @@ const components = [
   Avatar,
   Checkbox,
   Radio,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
 ]
 
 const plugins = [Loading]
@@ -121,6 +127,9 @@ const packages = {
   Avatar,
   Checkbox,
   Radio,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
 }
 
 export const EmqxMessage = Message

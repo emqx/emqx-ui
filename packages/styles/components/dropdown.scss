@@ -1,0 +1,9 @@
+.el-dropdown__popper.el-popper[role="tooltip"] {
+  border-radius: 8px;
+  .el-popper__arrow {
+    display: none;
+  }
+  .el-dropdown-menu {
+    border-radius: 8px;
+  }
+}

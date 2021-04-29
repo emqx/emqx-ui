@@ -144,6 +144,21 @@
       <emqx-breadcrumb-item>活动详情</emqx-breadcrumb-item>
     </emqx-breadcrumb>
   </div>
+  <h2>Dropdown</h2>
+  <div class="show-item">
+    <emqx-dropdown trigger="click">
+      <span class="el-dropdown-link"> 下拉菜单<i class="el-icon-arrow-down el-icon--right"></i> </span>
+      <template #dropdown>
+        <emqx-dropdown-menu>
+          <emqx-dropdown-item>黄金糕</emqx-dropdown-item>
+          <emqx-dropdown-item>狮子头</emqx-dropdown-item>
+          <emqx-dropdown-item>螺蛳粉</emqx-dropdown-item>
+          <emqx-dropdown-item disabled>双皮奶</emqx-dropdown-item>
+          <emqx-dropdown-item divided>蚵仔煎</emqx-dropdown-item>
+        </emqx-dropdown-menu>
+      </template>
+    </emqx-dropdown>
+  </div>
   <h2>Upload</h2>
   <div class="show-item">
     <emqx-upload drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
