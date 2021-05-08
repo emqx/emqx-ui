@@ -67,8 +67,8 @@
   </div>
   <h2>Form</h2>
   <div class="show-item">
-    <emqx-form ref="form" :model="testForm" label-width="80px">
-      <emqx-form-item label="活动名称">
+    <emqx-form ref="form" :model="testForm" label-width="80px" :rules="rules">
+      <emqx-form-item label="活动名称" required prop="name">
         <emqx-input v-model="testForm.name"></emqx-input>
       </emqx-form-item>
       <emqx-form-item label="活动区域">
@@ -254,6 +254,16 @@ export default defineComponent({
     const testTagsOptions = ['test1', 'test2', 'test3']
     const kvTest = ref({})
     const jsonValue = ref(JSON.stringify({ messge: 'hello' }, null, 2))
+    const rules = {
+      name: [
+        {
+          required: true,
+          type: 'string',
+          message: 'error',
+          trigger: 'blur',
+        },
+      ],
+    }
     const test = () => {
       console.log(testInput.value)
       console.log(testSelect.value)
@@ -262,23 +272,28 @@ export default defineComponent({
       console.log(kvTest.value)
       console.log(jsonValue.value)
     }
-    const onSubmit = () => {
-      console.log(testForm.value)
-      ElMessage({
-        type: 'success',
-        message: 'success',
-        duration: 0,
-      })
-      ElMessage({
-        type: 'error',
-        message: 'error',
-        duration: 0,
-      })
-      ElMessage({
-        type: 'warning',
-        message: 'warning',
-        duration: 0,
-      })
+    const form = ref()
+    const onSubmit = async () => {
+      try {
+        await form.value.validate()
+        ElMessage({
+          type: 'success',
+          message: 'success',
+          duration: 0,
+        })
+        ElMessage({
+          type: 'error',
+          message: 'error',
+          duration: 0,
+        })
+        ElMessage({
+          type: 'warning',
+          message: 'warning',
+          duration: 0,
+        })
+      } catch (error) {
+        // ignore
+      }
     }
     const KeyValueEditorRef = ref()
     const addOneRow = () => {
@@ -315,6 +330,8 @@ export default defineComponent({
       tagOptions,
       fakeRequestToAddTag,
       jsonValue,
+      form,
+      rules,
       checked,
       radio,
     }
