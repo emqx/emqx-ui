@@ -31,6 +31,7 @@ import Loading from './Loading'
 import Avatar from './Avatar'
 import Checkbox from './Checkbox'
 import Radio from './Radio'
+import RadioGroup from './RadioGroup'
 import Dropdown from './Dropdown'
 import DropdownMenu from './DropdownMenu'
 import DropdownItem from './DropdownItem'
@@ -76,6 +77,7 @@ const components = [
   Avatar,
   Checkbox,
   Radio,
+  RadioGroup,
   Dropdown,
   DropdownMenu,
   DropdownItem,
@@ -127,6 +129,7 @@ const packages = {
   Avatar,
   Checkbox,
   Radio,
+  RadioGroup,
   Dropdown,
   DropdownMenu,
   DropdownItem,
