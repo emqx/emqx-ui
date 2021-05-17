@@ -1,6 +1,7 @@
 import { App } from 'vue'
 import Button from './Button'
 import Input from './Input'
+import InputNumber from './InputNumber'
 import Row from './Row'
 import Col from './Col'
 import Container from './Container'
@@ -48,6 +49,7 @@ interface VueWindow extends Window {
 const components = [
   Button,
   Input,
+  InputNumber,
   Row,
   Col,
   Container,
@@ -100,6 +102,7 @@ const packages = {
   install,
   Button,
   Input,
+  InputNumber,
   Row,
   Col,
   Container,
