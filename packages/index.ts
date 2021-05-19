@@ -17,6 +17,7 @@ import FormItem from './FormItem'
 import Table from './Table'
 import TableColumn from './TableColumn'
 import Message from './Message'
+import MessageBox from './MessageBox'
 import Card from './Card'
 import Pagination from './Pagination'
 import Menu from './Menu'
@@ -139,5 +140,7 @@ const packages = {
 }
 
 export const EmqxMessage = Message
+
+export const EmqxMessageBox = MessageBox
 
 export default packages
