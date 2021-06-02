@@ -15,7 +15,7 @@ main.js
 ```js
 import { createApp } from 'vue'
 import EmqxUI from '@emqx/emqx-ui'
-import '@emqx/emqx-ui/lib/emqx-ui.css'
+import '@emqx/emqx-ui/lib/styles/index.scss'
 
 const app = createApp(App)
 app.use(EmqxUI)
