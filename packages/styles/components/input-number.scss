@@ -1,0 +1,25 @@
+.emqx-input-number {
+  &.el-input-number {
+    width: 100%;
+    .el-input__inner {
+      text-align: left;
+    }
+    &.is-controls-right {
+      .el-input-number__increase {
+        border-radius: 0 8px 0 0;
+      }
+      .el-input-number__decrease {
+        border-radius: 0 0 8px 0;
+      }
+    }
+  }
+  .el-input__inner {
+    border-radius: 8px;
+  }
+  .el-input-number__decrease {
+    border-radius: 8px 0 0 8px;
+  }
+  .el-input-number__increase {
+    border-radius: 0 8px 8px 0;
+  }
+}

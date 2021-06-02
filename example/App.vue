@@ -17,7 +17,8 @@
   <h2>Input</h2>
   <div class="show-item">
     <emqx-input v-model="testInput" placeholder="test" style="margin-bottom: 20px"></emqx-input>
-    <emqx-input v-model="testInput" placeholder="test" type="textarea"></emqx-input>
+    <emqx-input v-model="testInput" placeholder="test" type="textarea" style="margin-bottom: 20px"></emqx-input>
+    <emqx-input-number v-model="testInputNumber" :max="5"></emqx-input-number>
   </div>
   <h2>Layout</h2>
   <div class="show-item">
@@ -220,6 +221,7 @@ export default defineComponent({
   name: 'App',
   setup() {
     const testInput = ref('')
+    const testInputNumber = ref(0)
     const testSelect = ref('')
     const testSwitch = ref(true)
     const dialogVisible = ref(false)
@@ -313,6 +315,7 @@ export default defineComponent({
     const radio = ref('1')
     return {
       testInput,
+      testInputNumber,
       testSelect,
       testOptions,
       testSwitch,
