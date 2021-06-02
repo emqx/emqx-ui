@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-plus": "^1.0.2-beta.41"
+    "element-plus": "1.0.2-beta.44"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
