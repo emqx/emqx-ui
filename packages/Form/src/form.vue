@@ -18,9 +18,13 @@ export default defineComponent({
     const validate = () => {
       return form.value.validate()
     }
+    const resetField = () => {
+      form.value.resetField()
+    }
     return {
       form,
       validate,
+      resetField,
     }
   },
 })
