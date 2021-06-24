@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, onBeforeMount, onMounted, ref } from 'vue'
 import { ElContainer } from 'element-plus'
 
 export default defineComponent({
@@ -41,9 +41,36 @@ export default defineComponent({
       type: Number,
       default: 220,
     },
+    /**
+     * with this prop, when the width of window is less than this value
+     * the position of nav will be changed from fixed to relative
+     */
+    pageMinWidth: {
+      type: Number,
+      required: false,
+    },
   },
   setup(props) {
     const navContainer = ref<HTMLElement>()
+
+    let timer: undefined | number = undefined
+
+    const setNavPosition = (position: 'fixed' | 'static') => {
+      navContainer?.value?.style.setProperty('position', position)
+    }
+
+    const handlePosition = () => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = window.setTimeout(() => {
+        if (window.innerWidth > 1000) {
+          setNavPosition('fixed')
+        } else {
+          setNavPosition('static')
+        }
+      }, 200)
+    }
 
     onMounted(() => {
       if (!props.normal || !props.fixedNav) {
@@ -53,7 +80,16 @@ export default defineComponent({
       const posY = ele?.offsetTop
       ele?.style?.setProperty('position', 'fixed')
       ele?.style?.setProperty('top', posY ? `${posY}px` : '0px')
+      if (props.pageMinWidth) {
+        window.addEventListener('resize', handlePosition)
+      }
     })
+
+    onBeforeMount(() => {
+      handlePosition()
+      window.removeEventListener('resize', handlePosition)
+    })
+
     return {
       navContainer,
     }
