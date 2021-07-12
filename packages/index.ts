@@ -37,6 +37,8 @@ import RadioGroup from './RadioGroup'
 import Dropdown from './Dropdown'
 import DropdownMenu from './DropdownMenu'
 import DropdownItem from './DropdownItem'
+import Descriptions from './Descriptions'
+import DescriptionsItem from './DescriptionsItem'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -84,6 +86,8 @@ const components = [
   Dropdown,
   DropdownMenu,
   DropdownItem,
+  Descriptions,
+  DescriptionsItem,
 ]
 
 const plugins = [Loading]
@@ -137,6 +141,8 @@ const packages = {
   Dropdown,
   DropdownMenu,
   DropdownItem,
+  Descriptions,
+  DescriptionsItem,
 }
 
 export const EmqxMessage = Message
