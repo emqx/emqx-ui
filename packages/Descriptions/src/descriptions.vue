@@ -24,36 +24,34 @@ export default defineComponent({
   components: {
     ElDescriptions,
   },
-  setup(props: any, { slots }) {
-    const setName = (item: Slot) => {
-      if (typeof item.type === 'string' || item.type?.name !== 'EmqxDescriptionsItem') {
+  setup(props, { slots }) {
+    const resetToNativeName = (node: Slot) => {
+      if (typeof node.type === 'string' || node.type?.name !== 'EmqxDescriptionsItem') {
         return
       }
-      if (!item.type || typeof item.type === 'string') {
-        item.type = {
+      if (!node.type) {
+        node.type = {
           name: '',
         }
       }
-      item.type.name = 'ElDescriptionsItem'
+      // Why we set the type name to 'ElDescriptionsItem'
+      // https://github.com/element-plus/element-plus/blob/dev/packages/descriptions/src/index.vue#L100
+      node.type.name = 'ElDescriptionsItem'
     }
 
-    const recursiveChange = (children: Array<Slot>) => {
-      const temp: any = Array.isArray(children) ? children : [children]
-      temp.forEach((child: Slot) => {
-        if (Array.isArray(child.children)) {
-          child.children.forEach((item: Slot) => {
-            setName(item)
+    const recursiveChangeName = (nodes: Array<Slot>) => {
+      nodes.forEach((node: Slot) => {
+        if (Array.isArray(node.children)) {
+          node.children.forEach((item: Slot) => {
+            resetToNativeName(item)
           })
-          recursiveChange(child.children)
+          recursiveChangeName(node.children)
         } else {
-          setName(child)
+          resetToNativeName(node)
         }
       })
     }
-    const changeName = () => {
-      recursiveChange(slots.default?.() as Array<Slot>)
-    }
-    changeName()
+    recursiveChangeName(slots.default?.() as Array<Slot>)
   },
 })
 </script>
