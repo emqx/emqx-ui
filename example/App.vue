@@ -23,10 +23,18 @@
   <h2>Layout</h2>
   <div class="show-item">
     <emqx-row :gutter="20">
-      <emqx-col :span="6"><div class="grid-content bg-purple"></div></emqx-col>
-      <emqx-col :span="6"><div class="grid-content bg-purple"></div></emqx-col>
-      <emqx-col :span="6"><div class="grid-content bg-purple"></div></emqx-col>
-      <emqx-col :span="6"><div class="grid-content bg-purple"></div></emqx-col>
+      <emqx-col :span="6">
+        <div class="grid-content bg-purple"></div>
+      </emqx-col>
+      <emqx-col :span="6">
+        <div class="grid-content bg-purple"></div>
+      </emqx-col>
+      <emqx-col :span="6">
+        <div class="grid-content bg-purple"></div>
+      </emqx-col>
+      <emqx-col :span="6">
+        <div class="grid-content bg-purple"></div>
+      </emqx-col>
     </emqx-row>
   </div>
   <h2>Container</h2>
@@ -59,7 +67,7 @@
   <h2>Select</h2>
   <div class="show-item">
     <emqx-select v-model="testSelect" clearable>
-      <emqx-option v-for="item in testOptions" :key="item.value" :label="item.label" :value="item.value"> </emqx-option>
+      <emqx-option v-for="item in testOptions" :key="item.value" :label="item.label" :value="item.value"></emqx-option>
     </emqx-select>
   </div>
   <h2>Switch</h2>
@@ -93,13 +101,13 @@
           <span style="margin-left: 10px">{{ scope.row.date }}</span>
         </template>
       </emqx-table-column>
-      <emqx-table-column prop="name" label="姓名" width="180"> </emqx-table-column>
-      <emqx-table-column prop="address" label="地址"> </emqx-table-column>
+      <emqx-table-column prop="name" label="姓名" width="180"></emqx-table-column>
+      <emqx-table-column prop="address" label="地址"></emqx-table-column>
     </emqx-table>
   </div>
   <h2>Pagination</h2>
   <div class="show-item">
-    <emqx-pagination layout="prev, pager, next" :total="50"> </emqx-pagination>
+    <emqx-pagination layout="prev, pager, next" :total="50"></emqx-pagination>
   </div>
   <h2>Card</h2>
   <div class="show-item">
@@ -110,9 +118,7 @@
           <emqx-button class="button" type="text">操作按钮</emqx-button>
         </div>
       </template>
-      <div v-for="o in 4" :key="o" class="text item">
-        {{ '列表内容 ' + o }}
-      </div>
+      <div v-for="o in 4" :key="o" class="text item">{{ '列表内容 ' + o }}</div>
     </emqx-card>
   </div>
   <h2>Menu</h2>
@@ -140,7 +146,9 @@
   <div class="show-item">
     <emqx-breadcrumb separator="/">
       <emqx-breadcrumb-item :to="{ path: '/' }">首页</emqx-breadcrumb-item>
-      <emqx-breadcrumb-item><a href="/">活动管理</a></emqx-breadcrumb-item>
+      <emqx-breadcrumb-item>
+        <a href="/">活动管理</a>
+      </emqx-breadcrumb-item>
       <emqx-breadcrumb-item>活动列表</emqx-breadcrumb-item>
       <emqx-breadcrumb-item>活动详情</emqx-breadcrumb-item>
     </emqx-breadcrumb>
@@ -148,7 +156,10 @@
   <h2>Dropdown</h2>
   <div class="show-item">
     <emqx-dropdown trigger="click">
-      <span class="el-dropdown-link"> 下拉菜单<i class="el-icon-arrow-down el-icon--right"></i> </span>
+      <span class="el-dropdown-link">
+        下拉菜单
+        <i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
       <template #dropdown>
         <emqx-dropdown-menu>
           <emqx-dropdown-item>黄金糕</emqx-dropdown-item>
@@ -218,13 +229,16 @@
     </template>
     <!-- <div>123</div> -->
     <emqx-descriptions-item label="1234">
-      <template #label> 用户名：</template>
+      <template #label>用户名：</template>
       900000
     </emqx-descriptions-item>
     <emqx-descriptions-item label="手机号：">18100000000</emqx-descriptions-item>
     <emqx-descriptions-item label="居住地：">苏州市</emqx-descriptions-item>
     <emqx-descriptions-item label="联系地址：">江苏省苏州市吴中区吴中大道 1188 号</emqx-descriptions-item>
   </emqx-descriptions>
+  <emqx-empty>
+    <emqx-button type="primary">按钮</emqx-button>
+  </emqx-empty>
 </template>
 
 <script lang="ts">
