@@ -239,6 +239,9 @@
   <emqx-empty>
     <emqx-button type="primary">按钮</emqx-button>
   </emqx-empty>
+  <emqx-badge :value="2" class="item" type="warning">
+    <emqx-button size="small">回复</emqx-button>
+  </emqx-badge>
 </template>
 
 <script lang="ts">
