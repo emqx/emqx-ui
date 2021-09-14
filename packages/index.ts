@@ -40,6 +40,7 @@ import DropdownItem from './DropdownItem'
 import Descriptions from './Descriptions'
 import DescriptionsItem from './DescriptionsItem'
 import Empty from './Empty'
+import Badge from './Badge'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -90,6 +91,7 @@ const components = [
   Descriptions,
   DescriptionsItem,
   Empty,
+  Badge,
 ]
 
 const plugins = [Loading]
@@ -146,6 +148,7 @@ const packages = {
   Descriptions,
   DescriptionsItem,
   Empty,
+  Badge,
 }
 
 export const EmqxMessage = Message
