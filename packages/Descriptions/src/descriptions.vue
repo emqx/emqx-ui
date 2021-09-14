@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed, watch } from 'vue'
 import { ElDescriptions } from 'element-plus'
 
 interface Slot {
@@ -25,6 +25,10 @@ export default defineComponent({
     ElDescriptions,
   },
   setup(props, { slots }) {
+    const slotsArr = computed(() => {
+      return slots.default?.() || []
+    })
+
     const resetToNativeName = (node: Slot) => {
       if (typeof node.type === 'string' || node.type?.name !== 'EmqxDescriptionsItem') {
         return
@@ -52,6 +56,10 @@ export default defineComponent({
       })
     }
     recursiveChangeName(slots.default?.() as Array<Slot>)
+
+    watch(slotsArr, val => {
+      recursiveChangeName(val as Array<Slot>)
+    })
   },
 })
 </script>
