@@ -16,7 +16,10 @@
   </div>
   <h2>Input</h2>
   <div class="show-item">
-    <emqx-input v-model="testInput" placeholder="test" style="margin-bottom: 20px"></emqx-input>
+    <emqx-input v-model="testInput" placeholder="test" style="margin-bottom: 20px">
+      <template #prepend>Http://</template>
+      <template #append>.com</template>
+    </emqx-input>
     <emqx-input v-model="testInput" placeholder="test" type="textarea" style="margin-bottom: 20px"></emqx-input>
     <emqx-input-number v-model="testInputNumber" :max="5"></emqx-input-number>
   </div>
