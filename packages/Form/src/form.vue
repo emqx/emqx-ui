@@ -19,7 +19,7 @@ export default defineComponent({
       return form.value.validate()
     }
     const resetField = () => {
-      form.value.resetField()
+      form.value.resetFields()
     }
     return {
       form,
