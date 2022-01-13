@@ -41,6 +41,7 @@ import Descriptions from './Descriptions'
 import DescriptionsItem from './DescriptionsItem'
 import Empty from './Empty'
 import Badge from './Badge'
+import DatePicker from './DatePicker'
 
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -92,6 +93,7 @@ const components = [
   DescriptionsItem,
   Empty,
   Badge,
+  DatePicker,
 ]
 
 const plugins = [Loading]
@@ -149,6 +151,7 @@ const packages = {
   DescriptionsItem,
   Empty,
   Badge,
+  DatePicker,
 }
 
 export const EmqxMessage = Message
