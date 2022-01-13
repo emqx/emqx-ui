@@ -245,6 +245,22 @@
   <emqx-badge :value="2" class="item" type="warning">
     <emqx-button size="small">回复</emqx-button>
   </emqx-badge>
+  <h2>DatePicker</h2>
+  <h3>日期选择器</h3>
+  <div class="show-item">
+    <emqx-date-picker v-model="selectedDate" type="date" placeholder="选择一个日期"></emqx-date-picker>
+  </div>
+  <h3>日期时间选择器</h3>
+  <div class="show-item">
+    <emqx-date-picker
+      v-model="selectedDateAndTime"
+      type="datetimerange"
+      range-separator="-"
+      start-placeholder="开始时间"
+      end-placeholder="结束时间"
+    >
+    </emqx-date-picker>
+  </div>
 </template>
 
 <script lang="ts">
@@ -347,6 +363,8 @@ export default defineComponent({
     }
     const checked = ref(true)
     const radio = ref('1')
+    const selectedDate = ref('')
+    const selectedDateAndTime = ref('')
     return {
       testInput,
       testInputNumber,
@@ -371,6 +389,8 @@ export default defineComponent({
       rules,
       checked,
       radio,
+      selectedDate,
+      selectedDateAndTime,
     }
   },
 })

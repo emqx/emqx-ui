@@ -1,0 +1,8 @@
+.emqx-date-picker {
+  // for date type
+  .el-input__inner,
+  // for datetimerange type
+  &.el-input__inner {
+    border-radius: 8px;
+  }
+}
