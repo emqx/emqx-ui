@@ -1,5 +1,5 @@
 <template>
-  <el-upload class="emqx-upload">
+  <el-upload ref="upload" class="emqx-upload">
     <slot></slot>
     <template v-if="$slots.tip" #tip>
       <slot name="tip"></slot>
@@ -8,13 +8,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { ElUpload } from 'element-plus'
 
 export default defineComponent({
   name: 'EmqxUpload',
   components: {
     ElUpload,
+  },
+  setup() {
+    const upload = ref()
+    return {
+      upload,
+    }
   },
 })
 </script>
