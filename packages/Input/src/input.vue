@@ -1,5 +1,5 @@
 <template>
-  <el-input class="emqx-input">
+  <el-input ref="input" class="emqx-input">
     <template v-if="$slots.prepend" #prepend>
       <slot name="prepend"></slot>
     </template>
@@ -16,13 +16,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { ElInput } from 'element-plus'
 
 export default defineComponent({
   name: 'EmqxInput',
   components: {
     ElInput,
+  },
+  setup() {
+    const input = ref()
+    return {
+      input,
+    }
   },
 })
 </script>
