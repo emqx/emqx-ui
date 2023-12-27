@@ -1,6 +1,6 @@
 # emqx-ui
 
-🌌 EMQ X UI Library.
+🌌 EMQX UI Library.
 
 ## Usage
 
