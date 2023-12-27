@@ -1,6 +1,6 @@
 # emqx-ui
 
-🌌 EMQ X UI Library.
+🌌 EMQX UI Library.
 
 ## Usage
 
@@ -29,11 +29,11 @@ component.vue
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+  import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: 'App',
-})
+  export default defineComponent({
+    name: 'App',
+  })
 </script>
 
 <style lang="scss"></style>
@@ -52,7 +52,7 @@ $--color-primary: $custom-color;
 /* icon font path, required */
 $--font-path: '~element-plus/lib/theme-chalk/fonts';
 
-@import "~element-plus/packages/theme-chalk/src/index";
+@import '~element-plus/packages/theme-chalk/src/index';
 ```
 
 main.js
